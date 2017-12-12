@@ -14,11 +14,15 @@ for (let i = 0; i < word.length; i++) {
   $('#hidden_word').append(`<h1>${word[i]}</h1>`)
 }
 $('div h1').addClass('whiteout')  
-  // console.log($('#hidden_word > h1').text().charAt(0))
+  
 
   $('span').click(function () {
     $(this).addClass('whiteout')
     $(`div h1:contains('${$(this).text()}')`).removeClass('whiteout')
+
+    if ($('div h1:contains().text()')){
+
+    }
     
     
 
