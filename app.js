@@ -17,7 +17,7 @@ $('div h1').addClass('whiteout')
   // console.log($('#hidden_word > h1').text().charAt(0))
 
   $('span').click(function () {
-    ($(this).addClass('whiteout'))
+    $(this).addClass('whiteout')
     $(`div h1:contains('${$(this).text()}')`).removeClass('whiteout')
     
     
