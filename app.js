@@ -19,7 +19,7 @@ $(document).ready(function () {
 
   $('div h1').addClass('hidden')
 
-  $('span').click(function () {
+  $('#letter_box span').click(function () {
     $(this).addClass('whiteout')
     $(`div h1:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correct')
 
@@ -34,7 +34,7 @@ $(document).ready(function () {
     }
 
     if (counter === 0) {
-      setTimeout(function() {alert("Womp womp. Refresh to try again!")}, 75)
+      setTimeout(function() {alert("(sad trombone) you lost. Refresh to try again!")}, 75)
     }
 
     console.log($(this).text())
