@@ -14,19 +14,22 @@ for (let i = 0; i < word.length; i++) {
   $('#hidden_word').append(`<h1>${word[i]}</h1>`)
 }
 $('div h1').addClass('whiteout')  
-  
+
+$('div h1').addClass('hidden')
 
   $('span').click(function () {
     $(this).addClass('whiteout')
     $(`div h1:contains('${$(this).text()}')`).removeClass('whiteout')
 
-    if ($('div h1:contains().text()')){
-
+    if (word.indexOf($(this).text()) === -1) {
+      
     }
+
+    console.log(word)
     
     
 
-    console.log($(this).attr('id'))
+    console.log($(this).text())
   })
 
 
