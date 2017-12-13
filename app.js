@@ -8,7 +8,7 @@ $(document).ready(function () {
 
   let counter = 6
 
-  let word = "HANGMAN".split('')
+  let word = "COWBOY".split('')
 
   for (let i = 0; i < word.length; i++) {
     $('#hidden_word').append(`<span class="hidden_letter">${word[i]}</span>`)
@@ -17,7 +17,7 @@ $(document).ready(function () {
   $('.hidden_letter').addClass('whiteout')
 
   $('.letter_box span').on('click', function () {
-    $(this).addClass('whiteout')
+    $(this).addClass('change_click')
     $(`.hidden_letter:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correctLetter')
     $(this).off()
 

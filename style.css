@@ -24,22 +24,18 @@ header {
   align-items: center;
 }
 
-.alphabet_box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-
 .whiteout {
   color: #ba5624;
 }
 
+.change_click {
+  color: #d58936
+}
+
 .hidden_letter {
   font-size: 5em;
-  
 }
+
 
 #hidden_word {
   padding-bottom: 5%;
@@ -51,6 +47,7 @@ header {
 
 .letter_box span {
   font-size: 3em;
+  padding: 1.5px;
 }
 
 .correctLetter {color: #381D2A;}
