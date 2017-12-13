@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 
 
-  let word = "BANANA".split('')
+  let word = "JAVASCRIPT".split('')
 
   for (let i = 0; i < word.length; i++) {
     $('#hidden_word').append(`<h1>${word[i]}</h1>`)
@@ -19,9 +19,10 @@ $(document).ready(function () {
 
   $('div h1').addClass('hidden')
 
-  $('#letter_box span').click(function () {
+  $('#letter_box span').on('click', function () {
     $(this).addClass('whiteout')
     $(`div h1:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correct')
+    $(this).off()
 
     if (word.indexOf($(this).text()) === -1) {
 
