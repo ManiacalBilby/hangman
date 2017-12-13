@@ -11,14 +11,14 @@ $(document).ready(function () {
   let word = "HANGMAN".split('')
 
   for (let i = 0; i < word.length; i++) {
-    $('#hidden_word').append(`<h1>${word[i]}</h1>`)
+    $('#hidden_word').append(`<span class="hidden_letter">${word[i]}</span>`)
   }
 
-  $('div h1').addClass('whiteout hidden')
+  $('.hidden_letter').addClass('whiteout')
 
-  $('#letter_box span').on('click', function () {
+  $('.letter_box span').on('click', function () {
     $(this).addClass('whiteout')
-    $(`div h1:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correct')
+    $(`.hidden_letter:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correctLetter')
     $(this).off()
 
     if (word.indexOf($(this).text()) === -1) {
@@ -26,7 +26,7 @@ $(document).ready(function () {
       $('h2 span').text(function (variable) { return (counter -= 1) })
     }
 
-    if ($('div h1.correct').length === $('div h1').length) {
+    if ($('.hidden_letter.correctLetter').length === $('.hidden_letter').length) {
       setTimeout(function () { alert('You WIN!') }, 75)
     }
 

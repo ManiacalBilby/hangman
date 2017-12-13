@@ -5,50 +5,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
   <link rel="stylesheet" href="style.css"></link>
   <title></title>
 </head>
 
 <body>
   <header>
-    <h1>Hangman</h1>
-    <div>
-      <h2>Counter <span id=counter>6</span></h2>
+    <div class="game_name">
+      <h1>Hangman</h1>
     </div>
-</header>
+    <div class="counter">
+      <h2>Guesses
+        <span id=counter>6</span>
+      </h2>
+    </div>
+  </header>
   <div id="hidden_word">
-    
+
   </div>
-  <div id="letter_box">
-    <span id="a">A</span>
-    <span id="b">B</span>
-    <span id="c">C</span>
-    <span id="d">D</span>
-    <span id="e">E</span>
-    <span id="f">F</span>
-    <span id="g">G</span>
-    <span id="h">H</span>
-    <span id="i">I</span>
-    <span id="j">J</span>
-    <span id="k">K</span>
-    <span id="l">L</span>
-    <span id="m">M</span>
-    <span id="n">N</span>
-    <span id="o">O</span>
-    <span id="p">P</span>
-    <span id="q">Q</span>
-    <span id="r">R</span>
-    <span id="s">S</span>
-    <span id="t">T</span>
-    <span id="u">U</span>
-    <span id="v">V</span>
-    <span id="w">W</span>
-    <span id="x">X</span>
-    <span id="y">Y</span>
-    <span id="z">Z</span>
+  <div class="alphabet_box">
+    <div class="letter_box">
+      <span>A</span>
+      <span>B</span>
+      <span>C</span>
+      <span>D</span>
+      <span>E</span>
+      <span>F</span>
+      <span>G</span>
+      <span>H</span>
+      <span>I</span>
+      <span>J</span>
+      <span>K</span>
+      <span>L</span>
+      <span>M</span>
+      <span>N</span>
+      <span>O</span>
+      <span>P</span>
+      <span>Q</span>
+      <span>R</span>
+      <span>S</span>
+      <span>T</span>
+      <span>U</span>
+      <span>V</span>
+      <span>W</span>
+      <span>X</span>
+      <span>Y</span>
+      <span>Z</span>
+    </div>
   </div>
   <div id="hangman_figure"></div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </body>
 

@@ -1,9 +1,56 @@
+body {
+  font-family: "Bungee";
+  background-color: #ba5624;
+  color: #ffA552
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.game_name {
+  justify-content: center;
+  font-size: 2em;
+}
+
+.counter {
+  font-size: 1.25em;
+}
+
+.counter,
+.game_name {
+  display: flex;
+  align-items: center;
+}
+
+.alphabet_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
 .whiteout {
-  color: white;
+  color: #ba5624;
 }
 
-#letter_box span {
-  font-size: 50px;
+.hidden_letter {
+  font-size: 5em;
+  
 }
 
-.correct {color: black;}
+#hidden_word {
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.letter_box span {
+  font-size: 3em;
+}
+
+.correctLetter {color: #381D2A;}
