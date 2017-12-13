@@ -8,16 +8,13 @@ $(document).ready(function () {
 
   let counter = 6
 
-
-
-  let word = "JAVASCRIPT".split('')
+  let word = "HANGMAN".split('')
 
   for (let i = 0; i < word.length; i++) {
     $('#hidden_word').append(`<h1>${word[i]}</h1>`)
   }
-  $('div h1').addClass('whiteout')
 
-  $('div h1').addClass('hidden')
+  $('div h1').addClass('whiteout hidden')
 
   $('#letter_box span').on('click', function () {
     $(this).addClass('whiteout')
@@ -26,16 +23,15 @@ $(document).ready(function () {
 
     if (word.indexOf($(this).text()) === -1) {
 
-    $('h2 span').text(function (variable) { return (counter -= 1) })
-
+      $('h2 span').text(function (variable) { return (counter -= 1) })
     }
 
     if ($('div h1.correct').length === $('div h1').length) {
-      setTimeout(function() {alert('You WIN!')}, 75)
+      setTimeout(function () { alert('You WIN!') }, 75)
     }
 
     if (counter === 0) {
-      setTimeout(function() {alert("(sad trombone) you lost. Refresh to try again!")}, 75)
+      setTimeout(function () { alert("(sad trombone) you lost. Refresh to try again!") }, 75)
     }
 
     console.log($(this).text())
