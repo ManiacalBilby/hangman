@@ -33,7 +33,9 @@ $(document).ready(function () {
       setTimeout(function() {alert('You WIN!')}, 75)
     }
 
-    
+    if (counter === 0) {
+      setTimeout(function() {alert("Womp womp. Refresh to try again!")}, 75)
+    }
 
     console.log($(this).text())
   })
