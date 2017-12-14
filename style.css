@@ -17,6 +17,7 @@ header {
 
 .counter {
   font-size: 1.25em;
+  margin-left: 4px;
 }
 
 .wrong_color {
