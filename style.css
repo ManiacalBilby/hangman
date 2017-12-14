@@ -15,7 +15,6 @@ header {
   font-size: 2em;
 }
 
-
 .counter {
   font-size: 1.25em;
 }
@@ -63,7 +62,6 @@ header {
   flex-flow: row wrap;
   width: 50%;
 }
-
 
 .letter_box span {
   font-size: 3em;
