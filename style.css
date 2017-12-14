@@ -15,6 +15,7 @@ header {
   font-size: 2em;
 }
 
+
 .counter {
   font-size: 1.25em;
 }
@@ -35,8 +36,9 @@ header {
 
 .hidden_letter {
   font-size: 5em;
+  text-decoration: underline #ffA552;
+  margin: 0.25px 0.5px;
 }
-
 
 #hidden_word {
   padding: 5% 0;
