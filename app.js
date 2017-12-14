@@ -1,7 +1,7 @@
 $(document).ready(function () {
   console.log("Document ready!");
 
-  let words = ['HORSE', 'COWBOY', 'CACTUS', 'SNAKE', 'REVOLVER', 'BANDIT,', 'CATTLE']
+  let words = ['HORSE', 'COWBOY', 'CACTUS', 'SNAKE', 'REVOLVER', 'BANDIT', 'CATTLE']
 
   let westernWord = words[Math.floor(Math.random() * words.length)]
 
@@ -19,20 +19,23 @@ $('.letter_box span').css('cursor', 'crosshair')
 
   $('.letter_box span').on('click', function () {
     $(this).addClass('change_click')
-    $(`.hidden_letter:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correctLetter')
+    $(`.hidden_letter:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correct_letter')
     $(this).off()
 
     if (word.indexOf($(this).text()) === -1) {
 
-      $('h2 span').text(function (variable) { return (counter -= 1) })
+      $('#counter').text(function (variable) { return (counter -= 1) })
     }
 
-    if ($('.hidden_letter.correctLetter').length === $('.hidden_letter').length) {
-      setTimeout(function () { alert('You WIN!') }, 75)
+    if ($('.hidden_letter.correct_letter').length === $('.hidden_letter').length) {
+      setTimeout(function () { alert('You WIN! Click OK to play again!'), location.reload()}, 75)
     }
+
+    
 
     if (counter === 0) {
-      setTimeout(function () { alert("(sad trombone) you lost. Refresh to try again!") }, 75)
+      $('.hidden_letter').addClass('correct_letter')
+      setTimeout(function () { alert('(sad trombone) You lost. Click "OK" to play again!'), location.reload()}, 75)
     }
 
     console.log($(this).text())
