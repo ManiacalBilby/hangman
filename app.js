@@ -1,7 +1,7 @@
 $(document).ready(function () {
   console.log("Document ready!");
 
-  let words = ['HORSE', 'COWBOY', 'CACTUS', 'SNAKE', 'REVOLVER', 'BANDIT', 'CATTLE']
+  let words = ['HORSE', 'COWBOY', 'CACTUS', 'SNAKE', 'REVOLVER', 'BANDIT', 'CATTLE', 'SADDLE', 'LASSO', 'PRAIRIE', 'FRONTIER']
 
   let westernWord = words[Math.floor(Math.random() * words.length)]
 
