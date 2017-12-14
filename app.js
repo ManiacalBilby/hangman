@@ -24,6 +24,8 @@ $('.letter_box span').css('cursor', 'crosshair')
 
     if (word.indexOf($(this).text()) === -1) {
 
+      $('#counter').addClass('wrong_color')
+
       $('#counter').text(function (variable) { return (counter -= 1) })
     }
 

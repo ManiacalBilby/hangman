@@ -20,6 +20,10 @@ header {
   font-size: 1.25em;
 }
 
+.wrong_color {
+  color: #69140B
+}
+
 .counter,
 .game_name {
   display: flex;
