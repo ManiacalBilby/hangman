@@ -19,6 +19,7 @@ The player will click a letter from the alphabet box. If the letter is in the hi
 * Random words
 * Guess counter
 * Reset/randomize at game end
+* Mobile first design
 
 ### Wireframe
 ![Hangman wireframe](hangman.jpg)
