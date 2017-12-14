@@ -28,14 +28,14 @@ $('.letter_box span').css('cursor', 'crosshair')
     }
 
     if ($('.hidden_letter.correct_letter').length === $('.hidden_letter').length) {
-      setTimeout(function () { alert('You WIN! Click OK to play again!'), location.reload()}, 75)
+      setTimeout(function () { alert('You WIN! Close this alert to play again!'), location.reload()}, 75)
     }
 
     
 
     if (counter === 0) {
       $('.hidden_letter').addClass('correct_letter')
-      setTimeout(function () { alert('(sad trombone) You lost. Click "OK" to play again!'), location.reload()}, 75)
+      setTimeout(function () { alert('(sad trombone) You lost. Close this alert to play again!'), location.reload()}, 75)
     }
 
     console.log($(this).text())
