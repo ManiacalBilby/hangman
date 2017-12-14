@@ -1,7 +1,8 @@
 body {
   font-family: "Bungee";
   background-color: #ba5624;
-  color: #ffA552
+  color: #ffA552;
+  cursor: default;
 }
 
 header {
