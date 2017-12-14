@@ -38,10 +38,23 @@ header {
 
 
 #hidden_word {
-  padding-bottom: 5%;
+  padding: 5% 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.alphabet_box {
+  display: flex;
+  justify-content: center;
+}
+
+.letter_box {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 50%;
 }
 
 
