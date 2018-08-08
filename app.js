@@ -9,6 +9,19 @@ $(document).ready(function () {
 
   let word = westernWord.split('')
 
+  let winner = function() {
+    if ($('.hidden_letter.correct_letter').length === $('.hidden_letter').length) {
+      setTimeout(function () { alert('You WIN! Close this alert to play again!'), location.reload() }, 75)
+    }
+  }
+
+  let loser = function() {
+    if (counter === 0) {
+      $('.hidden_letter').addClass('correct_letter')
+      setTimeout(function () { alert('(sad trombone) You lost. Close this alert to play again!'), location.reload() }, 75)
+    }
+  }
+
   $('.letter_box span').css('cursor', 'crosshair')
 
   for (let i = 0; i < word.length; i++) {
@@ -17,26 +30,41 @@ $(document).ready(function () {
 
   $('.hidden_letter').addClass('whiteout')
 
+  // Letter selected by key press
+
+  $(document).keypress(function(event){
+    let keyPressed = String.fromCharCode(event.which).toUpperCase();
+
+    if (word.indexOf(keyPressed) >= 0) {
+      $(`.hidden_letter:contains(${keyPressed})`).removeClass('whiteout').addClass('correct_letter')
+      $(`.letter_box span:contains(${keyPressed})`).addClass('change_click')
+    } 
+
+    if (word.indexOf(keyPressed) === -1) {
+      $('#counter').addClass('wrong_color')
+      $('#counter').text(function (variable) { return (counter -= 1) })
+    }
+
+  winner();
+
+  loser();
+
+  });
+  // Letter selected by mouse click
+
   $('.letter_box span').on('click', function () {
     $(this).addClass('change_click')
     $(`.hidden_letter:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correct_letter')
     $(this).off()
 
     if (word.indexOf($(this).text()) === -1) {
-
       $('#counter').addClass('wrong_color')
-
       $('#counter').text(function (variable) { return (counter -= 1) })
     }
 
-    if ($('.hidden_letter.correct_letter').length === $('.hidden_letter').length) {
-      setTimeout(function () { alert('You WIN! Close this alert to play again!'), location.reload() }, 75)
-    }
+    winner();
 
-    if (counter === 0) {
-      $('.hidden_letter').addClass('correct_letter')
-      setTimeout(function () { alert('(sad trombone) You lost. Close this alert to play again!'), location.reload() }, 75)
-    }
+    loser();
   })
 })
 
