@@ -9,6 +9,14 @@ $(document).ready(function () {
 
   let word = westernWord.split('')
 
+  let gameSetup = function() {
+    $('.letter_box span').css('cursor', 'crosshair')
+    for (let i = 0; i < word.length; i++) {
+      $('#hidden_word').append(`<span class="hidden_letter">${word[i]}</span>`)
+    }
+    $('.hidden_letter').addClass('whiteout')
+  }
+
   let winner = function() {
     if ($('.hidden_letter.correct_letter').length === $('.hidden_letter').length) {
       setTimeout(function () { alert('You WIN! Close this alert to play again!'), location.reload() }, 75)
@@ -22,13 +30,7 @@ $(document).ready(function () {
     }
   }
 
-  $('.letter_box span').css('cursor', 'crosshair')
-
-  for (let i = 0; i < word.length; i++) {
-    $('#hidden_word').append(`<span class="hidden_letter">${word[i]}</span>`)
-  }
-
-  $('.hidden_letter').addClass('whiteout')
+  gameSetup();
 
   // Letter selected by key press
 
