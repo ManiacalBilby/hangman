@@ -44,8 +44,8 @@ $(document).ready(function () {
     } 
 
     else {
-      $('#counter').addClass('wrong_color')
-      $('#counter').text(function (variable) { return (counter -= 1) })
+      $('#counter').addClass('wrong_letter')
+      $('#counter').text(function () { return (counter -= 1) })
     }
 
   winner();
@@ -62,8 +62,8 @@ $(document).ready(function () {
     $(this).off()
 
     if (word.indexOf($(this).text()) === -1) {
-      $('#counter').addClass('wrong_color')
-      $('#counter').text(function (variable) { return (counter -= 1) })
+      $('#counter').addClass('wrong_letter')
+      $('#counter').text(function () { return (counter -= 1) })
     }
 
     winner();
