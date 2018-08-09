@@ -3,16 +3,14 @@ $(document).ready(function () {
 
   let words = ['HORSE', 'COWBOY', 'CACTUS', 'SNAKE', 'REVOLVER', 'BANDIT', 'CATTLE', 'SADDLE', 'LASSO', 'PRAIRIE', 'FRONTIER']
 
-  let westernWord = words[Math.floor(Math.random() * words.length)]
+  let westernWord = words[Math.floor(Math.random() * words.length)].split('')
 
   let counter = 6
 
-  let word = westernWord.split('')
-
   let gameSetup = function() {
     $('.letter_box span').css('cursor', 'crosshair')
-    for (let i = 0; i < word.length; i++) {
-      $('#hidden_word').append(`<span class="hidden_letter">${word[i]}</span>`)
+    for (let i = 0; i < westernWord.length; i++) {
+      $('#hidden_word').append(`<span class="hidden_letter">${westernWord[i]}</span>`)
     }
     $('.hidden_letter').addClass('whiteout')
   }
@@ -39,7 +37,7 @@ $(document).ready(function () {
 
     $(`.letter_box span:contains(${keyPressed})`).addClass('change_click')
 
-    if (word.indexOf(keyPressed) >= 0) {
+    if (westernWord.indexOf(keyPressed) >= 0) {
       $(`.hidden_letter:contains(${keyPressed})`).removeClass('whiteout').addClass('correct_letter')
     } 
 
@@ -61,7 +59,7 @@ $(document).ready(function () {
     $(`.hidden_letter:contains('${$(this).text()}')`).removeClass('whiteout').addClass('correct_letter')
     $(this).off()
 
-    if (word.indexOf($(this).text()) === -1) {
+    if (westernWord.indexOf($(this).text()) === -1) {
       $('#counter').addClass('wrong_letter')
       $('#counter').text(function () { return (counter -= 1) })
     }
