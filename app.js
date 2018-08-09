@@ -37,12 +37,13 @@ $(document).ready(function () {
   $(document).keypress(function(event){
     let keyPressed = String.fromCharCode(event.which).toUpperCase();
 
+    $(`.letter_box span:contains(${keyPressed})`).addClass('change_click')
+
     if (word.indexOf(keyPressed) >= 0) {
       $(`.hidden_letter:contains(${keyPressed})`).removeClass('whiteout').addClass('correct_letter')
-      $(`.letter_box span:contains(${keyPressed})`).addClass('change_click')
     } 
 
-    if (word.indexOf(keyPressed) === -1) {
+    else {
       $('#counter').addClass('wrong_color')
       $('#counter').text(function (variable) { return (counter -= 1) })
     }
@@ -52,6 +53,7 @@ $(document).ready(function () {
   loser();
 
   });
+
   // Letter selected by mouse click
 
   $('.letter_box span').on('click', function () {
@@ -67,6 +69,7 @@ $(document).ready(function () {
     winner();
 
     loser();
+
   })
 })
 
